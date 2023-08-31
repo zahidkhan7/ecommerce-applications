@@ -7,4 +7,5 @@ import com.zad.eng.excellence.ecom.entity.ProductCategory;
 
 @Repository
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
+	
 }
