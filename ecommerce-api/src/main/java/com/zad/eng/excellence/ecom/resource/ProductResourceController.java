@@ -47,7 +47,14 @@ public class ProductResourceController {
 		List<ProductResponse> productResponse = productService.searchProductByName(name);
 		return new ResponseEntity<List<ProductResponse>>(productResponse, HttpStatus.OK);
 	}
-	
+
+	//https://www.baeldung.com/spring-data-jpa-pagination-sorting
+	@GetMapping("/findByCategoryId/{categoryId}")
+	public ResponseEntity<List<ProductResponse>> getProductsWithSpecificPage(@RequestParam String categoryId,
+			@RequestParam String startingPage, @RequestParam String totalRecord){
+		List<ProductResponse> productResponse = productService.searchProductByName(categoryId);
+		return new ResponseEntity<List<ProductResponse>>(productResponse, HttpStatus.OK);
+	}
 
 
 }
